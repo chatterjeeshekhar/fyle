@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^(.+)\.php$ /$1 [R,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ /fyle/$1.php [NC,END]
