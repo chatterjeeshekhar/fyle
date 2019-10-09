@@ -18,7 +18,7 @@ address like '%$q%' OR
 district like '%$q%' OR 
 state like '%$q%' 
 ) ORDER BY ifsc LIMIT $offset,$limit";
-	echo $sql;
+	//echo $sql;
 	$result = mysqli_query($con, $sql);
 	$jsonData = array();
 	if(mysqli_num_rows($result) > 0){
@@ -26,5 +26,5 @@ state like '%$q%'
 	    $jsonData[] = $array;
 	}
 	$jsonData = array('branches' => $jsonData);
-	echo stripslashes(json_encode($jsonData));
+	echo (json_encode($jsonData));
 }

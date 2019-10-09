@@ -18,5 +18,5 @@ $sql = "SELECT ifsc, bank_id, branch, address, city, district, state from branch
 	    $jsonData[] = $array;
 	}
 	$jsonData = array('branches' => $jsonData);
-	echo stripslashes(json_encode($jsonData));
+	echo (json_encode($jsonData));
 }

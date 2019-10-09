@@ -92,12 +92,15 @@ body {
 function fetch1() {
     //alert("a");
     $("#invTable > tbody").html("");
+            var rowContent = '<tr><th scope="row" colspan="8" style="text-align:center">Processing..</th></tr>';
+            $('#invTable tbody').append(rowContent);
     var q = document.getElementById("q1").value;
     var limit = document.getElementById("limit1").value;
     var offset = document.getElementById("offset1").value;
     var url = "branches/autocomplete?q="+q+"&limit="+limit+"&offset="+offset;
-    alert(url);
+    //alert(url);
     $.post(url, function(data) {
+        $("#invTable > tbody").html("");
         if (data != "") {
             j = $.parseJSON(data);
             j = j["branches"];
@@ -123,6 +126,7 @@ function fetch1() {
             }
 
         } else {
+            $("#invTable > tbody").html("");
             var rowContent = '<tr><th scope="row" colspan="8" style="text-align:center">No results to list</tr>';
             $('#invTable tbody').append(rowContent);
         }
@@ -133,12 +137,15 @@ function fetch1() {
 function fetch2() {
     //alert("a");
     $("#invTable > tbody").html("");
+    var rowContent = '<tr><th scope="row" colspan="8" style="text-align:center">Processing..</th></tr>';
+    $('#invTable tbody').append(rowContent);
     var q = document.getElementById("q2").value;
     var limit = document.getElementById("limit2").value;
     var offset = document.getElementById("offset2").value;
     var url = "branches/?q="+q+"&limit="+limit+"&offset="+offset;
-    alert(url);
+    //alert(url);
     $.post(url, function(data) {
+        $("#invTable > tbody").html("");
         if (data != "") {
             j = $.parseJSON(data);
             j = j["branches"];
@@ -164,6 +171,7 @@ function fetch2() {
             }
 
         } else {
+            $("#invTable > tbody").html("");
             var rowContent = '<tr><th scope="row" colspan="8" style="text-align:center">No results to list</tr>';
             $('#invTable tbody').append(rowContent);
         }
